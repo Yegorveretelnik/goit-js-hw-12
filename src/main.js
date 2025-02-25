@@ -12,6 +12,7 @@ const loadMoreBtn = document.querySelector("#load-more");
 let currentQuery = "";
 let page = 1;
 const perPage = 40;
+loadMoreBtn.style.display = "none";
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -23,7 +24,6 @@ form.addEventListener("submit", async (event) => {
   
   page = 1;
   gallery.innerHTML = "";
-  loadMoreBtn.style.display = "none";
   await loadImages();
 });
 
@@ -53,7 +53,7 @@ async function loadImages() {
   } catch (error) {
     iziToast.error({ title: "Error", message: "Не вдалося завантажити зображення. Спробуйте ще раз." });
   } finally {
-    loader.style.display = "none";
+    loader.style.display = "none"
   }
 }
 
