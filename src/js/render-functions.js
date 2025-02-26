@@ -11,10 +11,10 @@ export function renderImages(images) {
         <a class="gallery-item" href="${img.largeImageURL}">
           <img src="${img.webformatURL}" alt="${img.tags.split(',')[0]}" loading="lazy"/>
           <div class="image-info">
-            <p>❤️ Likes ${img.likes}</p>
-            <p>👁️ Views ${img.views}</p>
-            <p>💬 Comments ${img.comments}</p>
-            <p>⬇️ Downloads ${img.downloads}</p>
+            <p>Likes ${img.likes}</p>
+            <p>Views ${img.views}</p>
+            <p>Comments ${img.comments}</p>
+            <p>Downloads ${img.downloads}</p>
           </div>
         </a>
       `
