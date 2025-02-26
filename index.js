@@ -2,10 +2,10 @@ import{a as m,S as g,i as n}from"./assets/vendor-CtnHdr7b.js";(function(){const 
         <a class="gallery-item" href="${r.largeImageURL}">
           <img src="${r.webformatURL}" alt="${r.tags.split(",")[0]}" loading="lazy"/>
           <div class="image-info">
-            <p>❤️ Likes ${r.likes}</p>
-            <p>👁️ Views ${r.views}</p>
-            <p>💬 Comments ${r.comments}</p>
-            <p>⬇️ Downloads ${r.downloads}</p>
+            <p>Likes ${r.likes}</p>
+            <p>Views ${r.views}</p>
+            <p>Comments ${r.comments}</p>
+            <p>Downloads ${r.downloads}</p>
           </div>
         </a>
       `).join("");L.insertAdjacentHTML("beforeend",s),new g(".gallery a",{captions:!0,captionsData:"alt",captionDelay:250}).refresh()}const S=document.querySelector("#search-form"),q=document.querySelector("#search-input"),u=document.querySelector("#loader"),f=document.querySelector(".gallery"),i=document.querySelector("#load-more");let d="",l=1;const p=40;i.style.display="none";S.addEventListener("submit",async t=>{if(t.preventDefault(),d=q.value.trim(),!d){n.error({title:"Помилка",message:"Введіть слово для пошуку!"});return}l=1,f.innerHTML="",await y()});i.addEventListener("click",async()=>{l++,await y()});async function y(){u.style.display="block";try{const{images:t,totalHits:s}=await b(d,l,p);if(t.length===0){n.warning({message:"No images found. Try another search."});return}v(t),l*p>=s?(i.style.display="none",n.info({message:"We're sorry, but you've reached the end of search results."})):i.style.display="block",$()}catch{n.error({title:"Error",message:"Не вдалося завантажити зображення. Спробуйте ще раз."})}finally{u.style.display="none"}}function $(){const{height:t}=f.firstElementChild.getBoundingClientRect();window.scrollBy({top:t*2,behavior:"smooth"})}
